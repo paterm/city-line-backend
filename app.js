@@ -8,6 +8,9 @@ const lodash = require('lodash');
 const indexRouter = require('./routes/index');
 const app = express();
 
+app.use('/assets', express.static(path.join(__dirname, 'assets/')));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap-material-design/dist/')));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

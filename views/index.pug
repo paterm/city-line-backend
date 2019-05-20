@@ -2,4 +2,30 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  form.form(action="/markers" method="POST")
+    fieldset
+      .field
+        label.field__label Заголовок
+        input.field__input(name="title")
+
+      .field
+        label.field__label Latitude
+        input(name="latitude")
+
+      .field
+        label.field__label Longitude
+        input(name="longitude")
+
+      .field
+        label.field__label Город
+        select
+          each city in cities
+            option(value=city._id)= city.name
+
+      .field
+        label.field__label Основное изображение
+        input(type="file" name="image")
+
+      .field
+        button(type="submit") Добавить

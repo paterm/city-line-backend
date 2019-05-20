@@ -3,9 +3,10 @@ const Marker = require('../db/model/marker');
 
 const controller = {
     get: (req, res) => {
-        console.log(req);
         if (req.query.city) {
+            console.log(req.query.city);
             return City.model.findOne({name: req.query.city}, (err, city) => {
+                console.log(city);
                 return Marker.model.find({city_id: city._id}, (err, markers) => res.json(markers))
             });
         } else {

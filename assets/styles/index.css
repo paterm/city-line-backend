@@ -1,0 +1,11 @@
+.notification-manager {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    width: 300px;
+}
+
+.notification__content {
+    margin-bottom: 0;
+    font-size: 12px;
+}

@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=city-line-backend:* nodemon ./bin/www",
-    "run": "node ./bin/www"
+    "run": "PORT=80 node ./bin/www"
   },
   "dependencies": {
+    "bootstrap-material-design": "4.1.1",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

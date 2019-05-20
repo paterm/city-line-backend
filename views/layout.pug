@@ -1,7 +1,26 @@
 doctype html
-html
+html(lang='ru')
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-material-design.min.css')
+    link(rel='stylesheet', href='/assets/styles/index.css')
   body
-    block content
+    .container
+      block content
+
+    .notification-manager
+
+    block scripts
+      script(
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"
+      )
+      script(
+        src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"
+      )
+      script(src='/bootstrap/js/bootstrap-material-design.min.js')
+      script(src='/assets/scripts/index.js')

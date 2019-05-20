@@ -9,7 +9,19 @@ const CitySchema = new mongoose.Schema({
         type: Date,
         required: true
     }
+}, {
+    toJSON: {
+        transform(doc, ret) {
+            ret.id = ret._id;
+
+            delete ret._id;
+            delete ret.__v;
+
+            return ret;
+        }
+    }
 });
+
 const City = mongoose.model('City', CitySchema);
 
 module.exports = {
