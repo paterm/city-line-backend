@@ -5,27 +5,27 @@ block content
 
   form.form(action="/markers" method="POST")
     fieldset
-      .field
-        label.field__label Заголовок
-        input.field__input(name="title")
+      .form-group
+        label Заголовок
+        input.form-control(name="title" placeholder="Заголовок")
 
-      .field
-        label.field__label Latitude
-        input(name="latitude")
+      .form-group
+        label Latitude
+        input.form-control(name="latitude")
 
-      .field
-        label.field__label Longitude
-        input(name="longitude")
+      .form-group
+        label Longitude
+        input.form-control(name="longitude")
 
-      .field
-        label.field__label Город
-        select
+      .form-group
+        label Город
+        select.form-control
           each city in cities
             option(value=city._id)= city.name
 
-      .field
-        label.field__label Основное изображение
-        input(type="file" name="image")
+      .form-group
+        label Основное изображение
+        input.form-control(type="file" name="image")
 
-      .field
-        button(type="submit") Добавить
+      .form-group
+        button.btn.btn-outline-success(type="submit") Добавить
