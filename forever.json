@@ -1,0 +1,10 @@
+[
+  {
+    "uid": "city-line-backend",
+    "append": true,
+    "watch": false,
+    "script": "bin/www.js",
+    "sourceDir": "/home/paterm/city-line-backend/",
+    "workingDir": "/home/paterm/city-line-backend/"
+  }
+]

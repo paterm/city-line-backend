@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=city-line-backend:* nodemon ./bin/www",
-    "run": "PORT=80 node ./bin/www"
+    "start": "PORT=3000 DEBUG=city-line-backend:* nodemon ./bin/www",
+    "run": "node ./bin/www"
   },
   "dependencies": {
     "bootstrap-material-design": "4.1.1",
