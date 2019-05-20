@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3000 DEBUG=city-line-backend:* nodemon ./bin/www",
+    "start": "DEBUG=city-line-backend:* nodemon ./bin/www",
     "run": "node ./bin/www"
   },
   "dependencies": {
