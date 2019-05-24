@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    .container
+        h1 Sign Up
+
+        .card
+            .card-body
+                form.form(class='form-signin', action='/signup', method='POST')
+                    .form-group
+                        label Username
+                        input.form-control(
+                            type='text'
+                            name='username'
+                            placeholder='Email'
+                            required
+                            autofocus
+                        )
+                    .form-group
+                        label Пароль
+                        input.form-control(
+                            type='password'
+                            name='password'
+                            placeholder='Пароль'
+                            required
+                        )
+                    .form-group
+                        label Email
+                        input.form-control(
+                            type='email'
+                            name='email'
+                            placeholder='Email'
+                            required
+                        )
+                    .form-group
+                        label Имя
+                        input.form-control(
+                            type='text'
+                            name='firstName'
+                            placeholder='firstName'
+                            required
+                        )
+                    .form-group
+                        label Фамилия
+                        input.form-control(
+                            type='text'
+                            name='lastName'
+                            placeholder='lastName'
+                            required
+                        )
+
+                    .form-group
+                        button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign up

@@ -1,4 +1,27 @@
 block header
-    .container-fluid
+    .navbar.navbar-dark.bg-primary.navbar-expand-lg
         .container
-            
+            a.navbar-brand(href="/") Brand
+            button.navbar-toggler(
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            )
+                span.navbar-toggler-icon
+
+            #navbarNav.collapse.navbar-collapse
+                if (!user)
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                            a.nav-link(href="/login") Вход
+                                span.sr-only (current)
+                else
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href="/admin") Маркеры
+                        li.nav-item.ml-auto
+                            a.nav-link(href="/logout") Выход
+

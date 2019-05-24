@@ -1,11 +1,5 @@
-const City = require('../db/model/city');
-
-const controller = {
+module.exports = {
     index(req, res) {
-        City.model.find({}, (err, docs) => {
-            res.render('index', { title: 'Express', cities: docs });
-        });
+        res.render('index', { title: 'Линия города', user: req.user });
     }
 };
-
-module.exports = controller;

@@ -13,7 +13,10 @@ const controller = {
             return Marker.model.find({}, (err, markers) => res.json(markers))
         }
     },
-    save: (req, res) => Marker.methods.save(req.body).then(model => res.json(model))
+    save: (req, res) => Marker.methods
+        .save(req.body)
+        .then(model => res.json(model))
+        .catch(error => res.status(400).json({error}))
 };
 
 module.exports = controller;

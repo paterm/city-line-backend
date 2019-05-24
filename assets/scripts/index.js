@@ -14,11 +14,41 @@ const Notification = (type, title, content, timeout = 5000) => {
 const sendForms = () => {
      const $forms = $('form');
 
-     $forms.each((index, form) => {
-        $(form).on('submit', (event) => {
+     $forms.each((formIndex, form) => {
+         const $form = $(form);
+
+        $form.on('submit', (event) => {
             event.preventDefault();
 
-            Notification('success', 'Огонь', 'Все работает?');
+            const action = $form.attr('action');
+            const method = $form.attr('method');
+            const formData = {}
+
+            $(form).find('input[name]').each((index, node) => {
+                formData[node.name] = node.value;
+            });
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: formData
+            }).done(response => {
+                const {redirect, message} = response;
+
+                if (redirect) {
+                    return location.href = redirect;
+                }
+
+                if (message) {
+                    Notification('success', message.title, message.text);
+                }
+            }).fail(response => {
+                const {responseJSON} = response;
+
+                if (responseJSON.error) {
+                    Notification('danger', 'Ошибка', responseJSON.error);
+                }
+            });
         });
      });
 };

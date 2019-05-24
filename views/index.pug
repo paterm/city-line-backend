@@ -3,29 +3,3 @@ extends layout
 block content
   h1= title
 
-  form.form(action="/markers" method="POST")
-    fieldset
-      .form-group
-        label Заголовок
-        input.form-control(name="title" placeholder="Заголовок")
-
-      .form-group
-        label Latitude
-        input.form-control(name="latitude")
-
-      .form-group
-        label Longitude
-        input.form-control(name="longitude")
-
-      .form-group
-        label Город
-        select.form-control
-          each city in cities
-            option(value=city._id)= city.name
-
-      .form-group
-        label Основное изображение
-        input.form-control(type="file" name="image")
-
-      .form-group
-        button.btn.btn-outline-success(type="submit") Добавить
